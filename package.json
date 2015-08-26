@@ -1,0 +1,16 @@
+{
+  "name": "meadowlark.js",
+  "version": "0.0.0",
+  "description": "Sample website for Web Development with Node and Express (O'Reilly).",
+  "main": "meadowlark.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-handlebars": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "make test"
+  },
+  "author": "Feng Yu",
+  "license": "MIT"
+}
