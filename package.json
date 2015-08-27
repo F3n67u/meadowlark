@@ -3,11 +3,18 @@
   "version": "0.0.0",
   "description": "Sample website for Web Development with Node and Express (O'Reilly).",
   "main": "meadowlark.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/F3n67u/meadowlark"
+  },
   "dependencies": {
     "express": "^4.13.3",
     "express-handlebars": "^2.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5"
+  },
   "scripts": {
     "test": "make test"
   },
