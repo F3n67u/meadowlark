@@ -1,12 +1,21 @@
 var express = require('express');
-var exphbs = require('express-handlebars');
 var fortune = require('./lib/fortune.js');
 
 // express initiation
 var app = express();
 
 // set up hanlebars view engine
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+var handlebars = require('express-handlebars').create({
+  defaultLayout: 'main',
+  helpers: {
+    section: function (name, options) {
+      if (!this._sections) this._sections = {};
+      this._sections[name] = options.fn(this);
+      return null;
+    }
+  }
+});
+app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 
 // configure port
@@ -79,6 +88,10 @@ app.get('/tours/oregon-coast', function (req, res) {
 
 app.get('/tours/request-group-rate', function (req, res) {
   res.render('tours/request-group-rate');
+});
+
+app.get('/jquery-test', function (req, res) {
+  res.render('jquery-test');
 });
 
 // custom 404 page
